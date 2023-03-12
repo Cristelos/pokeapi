@@ -1,5 +1,13 @@
 
 
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    display: none;
+}
 
 ol#pokedex {
     display: flex;
