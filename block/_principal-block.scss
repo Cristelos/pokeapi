@@ -32,11 +32,27 @@ li div {
     flex-direction: column;
     border: 20px solid #326bb2;
     box-shadow: 0px 0px 17px 2px #aaaaaa;
+    filter: grayscale(1);
 }
 
-div img{
-    background-color: #ffffff;
+li div:hover {
+    transform: translateY(-20px);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    filter: none;
+}
+
+div img {
     border: 2px solid #606060;
+    background: url(../img/fondo-pokemones.png);
+    background-position-y: -85px;
+    filter: grayscale(1);
+}
+
+div img:hover {
+    filter: none;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
 }
 
 p{
