@@ -12,9 +12,11 @@ const pokedex = async (busqueda) => {
     }
 }
 
+
 // Aquí pintamos los datos que queremos en las tarjetas
 
 const pintar = (datospokemon) => {
+
     // console.log('name: ', datospokemon.name);
     // console.log('image: ',datospokemon.sprites['front_default']);
     // console.log('type: ', datospokemon.types.map((type) => type.type.name).join(', '));
@@ -49,6 +51,20 @@ const pintar = (datospokemon) => {
 
 }
 
+//Vamos a coger el input creado en el HTML y le vamos a hacer buscar nuestro pokemones
+
+const cogerInput = (pokemons) => {
+
+    const input$$ = document.querySelector('.buscador');
+    input$$.addEventListener('input',() => busqueda.value,pokemons)
+
+}
+
+const busqueda = (filtro,pokemons) =>{
+
+    let pokemonsFiltrados = pokemons.filter((pokemons) => datospokemon.name.toLowercase().includes(filtro))
+    pintar(pokemonsFiltrados);
+}
 
 //Aquí creamos un bucle que nos devuelva los pokemon desde el 1 al 151 e iniciamos las funciones
 
@@ -61,7 +77,7 @@ const init = async () => {
        const pokemon = await pokedex(i);
        pintar(pokemon);
     }
-
+    cogerInput(pokemon);
 }
 
 init();
