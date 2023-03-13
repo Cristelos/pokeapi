@@ -27,6 +27,10 @@ const pintar = (datospokemon) => {
 
     const div$$ = document.createElement('div');
 
+    const idpokemon$$ = document.createElement('p');
+    idpokemon$$.setAttribute('class','id');
+    idpokemon$$.textContent = 'ID: ' + datospokemon.id;
+  
     const img$$ = document.createElement('img');
     img$$.setAttribute('src', datospokemon.sprites['front_default']);
     img$$.setAttribute('alt', datospokemon.name);
@@ -38,14 +42,10 @@ const pintar = (datospokemon) => {
     tipo$$.setAttribute('class', 'tipo');
     tipo$$.textContent = 'Tipo: ' + datospokemon.types.map((type) => type.type.name).join(', ');
 
-    const idpokemon$$ = document.createElement('p');
-    idpokemon$$.setAttribute('class','id');
-    idpokemon$$.textContent = 'ID: ' + datospokemon.id;
-    
+    div$$.appendChild(idpokemon$$);
     div$$.appendChild(img$$);
     div$$.appendChild(nombre$$);
     div$$.appendChild(tipo$$);
-    div$$.appendChild(idpokemon$$);
     li$$.appendChild(div$$);
     lista$$.appendChild(li$$);
 
@@ -56,7 +56,7 @@ const pintar = (datospokemon) => {
 const cogerInput = (pokemons) => {
 
     const input$$ = document.querySelector('.buscador');
-    input$$.addEventListener('input',() => busqueda.value,pokemons)
+    input$$.addEventListener('input',() => busqueda(input$$.value,pokemon))
 
 }
 
@@ -65,6 +65,7 @@ const busqueda = (filtro,pokemons) =>{
     let pokemonsFiltrados = pokemons.filter((pokemon) => datospokemon.name.toLowercase().includes(filtro))
     pintar(pokemonsFiltrados);
 }
+
 
 //Aquí creamos un bucle que nos devuelva los pokemon desde el 1 al 151 e iniciamos las funciones
 

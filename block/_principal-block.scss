@@ -1,38 +1,45 @@
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 50px 20px;
+}
+
 h1 {
     display: none;
 }
 
-h2{
+h2 {
     text-transform: uppercase;
     text-align: center;
     color: #00235B;
-    font-weight: 800;
+    /* font-weight: 800; */
     line-height: 0.0625;
-    letter-spacing: -0.5px;
-    font-size: 1.3rem;
+    letter-spacing: 1.3px;
+    font-size: 0.9rem;
     margin-top: 34px;
     margin-bottom: 22px;
+    font-family: "Press Start 2P", cursive;
 }
 
 ol#pokedex {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 30px;
     list-style: none;
     justify-content: center;
 }
 
 li div {
-    background-color: #ffcb03;
     padding: 20px 15px 14px;
     border-radius: 13px;
     width: 156px;
     display: flex;
     flex-direction: column;
-    border: 20px solid #326bb2;
+    border: 6px solid #326bb2;
     box-shadow: 0px 0px 17px 2px #aaaaaa;
     filter: grayscale(1);
+    background-image: radial-gradient(circle at 46.39% 46.39%, #ffff41 0, #ffff29 25%, #f8d110 50%, #cfa000 75%, #a87600 100%);
 }
 
 li div:hover {
@@ -51,13 +58,18 @@ div img {
 
 p{
     font-weight: 500;
-    color: #606060;
+    color: #414040;
 }
 
 p.tipo {
     margin-bottom: 7px;
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: capitalize;
 }
 
 p.id {
-    margin-top: -2.5px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
 }
