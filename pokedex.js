@@ -55,15 +55,21 @@ const pintar = (datospokemon) => {
 
 const cogerInput = (pokemons) => {
 
-    const input$$ = document.querySelector('.buscador');
-    input$$.addEventListener('input',() => busqueda(input$$.value,pokemon))
-
+    const input$$ = document.querySelector('input');
+    input$$.addEventListener('input',() => busqueda(input$$.value,pokemons))
+console.log(input$$);
 }
 
 const busqueda = (filtro,pokemons) =>{
-
-    let pokemonsFiltrados = pokemons.filter((pokemon) => datospokemon.name.toLowercase().includes(filtro))
-    pintar(pokemonsFiltrados);
+    const lista$$ = document.querySelector('#pokedex');
+    lista$$.innerHTML = " ";
+    let pokemonsFiltrados = pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(filtro))
+    console.log(filtro);
+    for (let i = 0; i < pokemonsFiltrados.length; i++) {
+        const pokemon = pokemonsFiltrados[i];
+        pintar(pokemon)
+    }
+    console.log(pokemonsFiltrados);
 }
 
 
@@ -73,12 +79,14 @@ const init = async () => {
     // const pokemon = await pokedex(1);
     // console.log('Esto es un pokemon',pokemon);
     // pintar(pokemon);
+    const arrayPokemons = [];
+
     for (let i = 1; i <= 151; i++) {
        const pokemon = await pokedex(i);
        pintar(pokemon);
-
+        arrayPokemons.push(pokemon)
     }
-    cogerInput(pokemon)
+    cogerInput(arrayPokemons)
 }
 
 init();
