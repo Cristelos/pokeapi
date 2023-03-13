@@ -1,5 +1,5 @@
 
-
+//Conectamos con la api de pokemon
 
 const pokedex = async (busqueda) => {
     try {
@@ -11,6 +11,8 @@ const pokedex = async (busqueda) => {
         console.log('Esto es un error',error);
     }
 }
+
+// Aquí pintamos los datos que queremos en las tarjetas
 
 const pintar = (datospokemon) => {
     // console.log('name: ', datospokemon.name);
@@ -47,6 +49,8 @@ const pintar = (datospokemon) => {
 
 }
 
+
+//Aquí creamos un bucle que nos devuelva los pokemon desde el 1 al 151 e iniciamos las funciones
 
 const init = async () => {
     // const pokemon = await pokedex(1);

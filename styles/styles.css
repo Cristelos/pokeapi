@@ -73,23 +73,38 @@ nav {
 }
 
 input[type=search] {
-  padding: 6px;
-  border-radius: 7px;
+  padding: 7px;
+  border-radius: 16px;
+  width: 200px;
+  border: 3px solid #000000;
 }
 
-input[type=submit] {
-  padding: 5px 12px;
-  border: 3px solid #3069b2;
-  border-radius: 5px;
-  /* background-color: #ffcb03; */
-  font-weight: 500;
-  text-transform: uppercase;
+::-moz-placeholder {
+  color: dimgrey;
+  text-align: center;
+  font-size: 0.8 em;
+  font-style: italic;
 }
 
-input[type=submit]:hover {
-  background-color: #ffcb03;
+::placeholder {
+  color: dimgrey;
+  text-align: center;
+  font-size: 0.8 em;
+  font-style: italic;
 }
 
+/*input[type="submit"] {
+    padding: 5px 12px;
+    border: 3px solid #3069b2;
+    border-radius: 5px;
+    background-color: #ffcb03; 
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffcb03;
+}*/
 h1 {
   display: none;
 }
@@ -137,14 +152,8 @@ li div:hover {
 div img {
   border: 2px solid #606060;
   background: url(../img/fondo-pokemones.png);
-  background-position-y: -85px;
-  filter: grayscale(1);
-}
-
-div img:hover {
-  filter: none;
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
+  background-position-x: 656.3px;
+  background-size: 400px;
 }
 
 p {

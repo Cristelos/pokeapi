@@ -45,14 +45,8 @@ li div:hover {
 div img {
     border: 2px solid #606060;
     background: url(../img/fondo-pokemones.png);
-    background-position-y: -85px;
-    filter: grayscale(1);
-}
-
-div img:hover {
-    filter: none;
-    transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
+    background-position-x: 656.3px;
+    background-size: 400px;
 }
 
 p{
