@@ -62,7 +62,7 @@ const cogerInput = (pokemons) => {
 
 const busqueda = (filtro,pokemons) =>{
 
-    let pokemonsFiltrados = pokemons.filter((pokemons) => datospokemon.name.toLowercase().includes(filtro))
+    let pokemonsFiltrados = pokemons.filter((pokemon) => datospokemon.name.toLowercase().includes(filtro))
     pintar(pokemonsFiltrados);
 }
 
@@ -72,12 +72,12 @@ const init = async () => {
     // const pokemon = await pokedex(1);
     // console.log('Esto es un pokemon',pokemon);
     // pintar(pokemon);
-
     for (let i = 1; i <= 151; i++) {
        const pokemon = await pokedex(i);
        pintar(pokemon);
+
     }
-    cogerInput(pokemon);
+    cogerInput(pokemon)
 }
 
 init();
