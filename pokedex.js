@@ -64,12 +64,12 @@ const busqueda = (filtro,pokemons) =>{
     const lista$$ = document.querySelector('#pokedex');
     lista$$.innerHTML = " ";
     let pokemonsFiltrados = pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(filtro))
-    console.log(filtro);
+    // console.log(filtro);
     for (let i = 0; i < pokemonsFiltrados.length; i++) {
         const pokemon = pokemonsFiltrados[i];
         pintar(pokemon)
     }
-    console.log(pokemonsFiltrados);
+    // console.log(pokemonsFiltrados);
 }
 
 
